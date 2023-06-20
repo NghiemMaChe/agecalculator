@@ -1,9 +1,8 @@
-
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Máy tính tuổi AI</title>
-<script>
+    <title>Máy tính tuổi AI</title>
+    <script>
         function showAge(event) {
             // Kiểm tra xem phím Enter đã được nhấn
             if (event.keyCode === 13) {
@@ -17,14 +16,11 @@
     </script>
 </head>
 <body>
-
-<h1>Máy tính tuổi thông minh</h1>
-<form>
+    <form>
         <label for="number">Nhập tuổi của bạn:</label>
-        <input type="number" id="number" name="number" required>
+        <input type="text" id="number" name="number" pattern="[0-9]+" title="Vui lòng chỉ nhập chữ số" required onkeydown="showAge(event)">
         <br><br>
-        <input type="button" value="Tính tuổi" onclick="showAge()">
+        <input type="submit" value="Submit">
     </form>
-
 </body>
 </html>
