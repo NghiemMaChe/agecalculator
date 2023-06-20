@@ -8,7 +8,7 @@
     <h1>Máy tính tuổi thông minh</h1>
     <form>
         <label for="number">Nhập tuổi của bạn:</label>
-        <input type="text" id="number" name="number" pattern="[0-9]+" title="Vui lòng chỉ nhập chữ số" required>
+        <input type="text" id="number" name="number" required>
         <br><br>
         <input type="button" value="Submit" onclick="showAge()">
     </form>
@@ -18,13 +18,24 @@
         function showAge() {
             var number = document.getElementById("number").value;
 
-            // Tạo thông báo tùy chỉnh với SweetAlert
-            Swal.fire({
-                title: 'Tuổi của bạn là',
-                text: number,
-                icon: 'success',
-                confirmButtonText: 'Ok'
-            });
+            // Kiểm tra xem giá trị nhập vào có phải là số hay không
+            if (isNaN(number)) {
+                // Hiển thị thông báo lỗi nếu không phải là số
+                Swal.fire({
+                    title: 'Lỗi',
+                    text: 'Vui lòng nhập số tuổi',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                });
+            } else {
+                // Hiển thị thông báo với giá trị số nhập vào
+                Swal.fire({
+                    title: 'Tuổi của bạn là',
+                    text: number,
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                });
+            }
         }
     </script>
 </body>
