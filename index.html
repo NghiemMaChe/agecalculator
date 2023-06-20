@@ -19,11 +19,11 @@
             var number = document.getElementById("number").value;
 
             // Kiểm tra xem giá trị nhập vào có phải là số hay không
-            if (isNaN(number)) {
-                // Hiển thị thông báo lỗi nếu không phải là số
+            if (isNaN(number) || number < 0) {
+                // Hiển thị thông báo lỗi nếu không phải là số dương
                 Swal.fire({
                     title: 'Lỗi',
-                    text: 'Tuổi là số chứ bạn',
+                    text: 'Tuổi clgt ???',
                     icon: 'error',
                     confirmButtonText: 'Nhập lại'
                 });
