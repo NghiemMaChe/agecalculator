@@ -1,26 +1,31 @@
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Máy tính tuổi AI</title>
-<script>
-        function showAge() {
-            // Lấy giá trị số nhập vào từ trường input
-            var number = document.getElementById("number").value;
-
-            // Hiển thị thông báo
-            alert("Tuổi của bạn là: " + number);
-        }
-    </script>
+    <title>Máy tính tuổi AI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.10/dist/sweetalert2.min.css">
 </head>
 <body>
-
-<h1>Máy tính tuổi thông minh</h1>
-<form>
+    <h1>Máy tính tuổi thông minh</h1>
+    <form>
         <label for="number">Nhập tuổi của bạn:</label>
-        <input type="number" id="number" name="number" required>
+        <input type="text" id="number" name="number" pattern="[0-9]+" title="Vui lòng chỉ nhập chữ số" required>
         <br><br>
-        <input type="button" value="Tính tuổi" onclick="showAge()">
+        <input type="button" value="Submit" onclick="showAge()">
     </form>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.10/dist/sweetalert2.all.min.js"></script>
+    <script>
+        function showAge() {
+            var number = document.getElementById("number").value;
+
+            // Tạo thông báo tùy chỉnh với SweetAlert
+            Swal.fire({
+                title: 'Tuổi của bạn là',
+                text: number,
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            });
+        }
+    </script>
 </body>
 </html>
