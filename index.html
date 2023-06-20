@@ -10,7 +10,7 @@
         <label for="number">Nhập tuổi của bạn:</label>
         <input type="text" id="number" name="number" required>
         <br><br>
-        <input type="button" value="Submit" onclick="showAge()">
+        <input type="button" value="Tính tuổi" onclick="showAge()">
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.10/dist/sweetalert2.all.min.js"></script>
@@ -25,7 +25,7 @@
                     title: 'Lỗi',
                     text: 'Tuổi là số chứ bạn',
                     icon: 'error',
-                    confirmButtonText: 'Ok để nhập lại'
+                    confirmButtonText: 'Nhập lại'
                 });
             } else {
                 // Hiển thị thông báo với giá trị số nhập vào
