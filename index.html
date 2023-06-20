@@ -1,26 +1,26 @@
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Máy tính tuổi AI</title>
-    <script>
-        function showAge(event) {
-            // Kiểm tra xem phím Enter đã được nhấn
-            if (event.keyCode === 13) {
-                // Lấy giá trị số nhập vào từ trường input
-                var number = document.getElementById("number").value;
+<title>Máy tính tuổi AI</title>
+<script>
+        function showAge() {
+            // Lấy giá trị số nhập vào từ trường input
+            var number = document.getElementById("number").value;
 
-                // Hiển thị thông báo
-                alert("Tuổi của bạn là: " + number);
-            }
+            // Hiển thị thông báo
+            alert("Tuổi của bạn là: " + number);
         }
     </script>
 </head>
 <body>
-    <form>
+
+<h1>Máy tính tuổi thông minh</h1>
+<form>
         <label for="number">Nhập tuổi của bạn:</label>
-        <input type="text" id="number" name="number" pattern="[0-9]+" title="Vui lòng chỉ nhập chữ số" required onkeydown="showAge(event)">
+        <input type="number" id="number" name="number" required>
         <br><br>
-        <input type="submit" value="Submit">
+        <input type="button" value="Tính tuổi" onclick="showAge()">
     </form>
+
 </body>
 </html>
