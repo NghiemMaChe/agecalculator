@@ -15,15 +15,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.10/dist/sweetalert2.all.min.js"></script>
     <script>
+        // Lắng nghe sự kiện "keypress" trên input
+        document.getElementById("number").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Ngăn chặn hành vi mặc định của form
+                showAge(); // Gọi hàm showAge() khi nhấn phím "Enter"
+            }
+        });
+
         function showAge() {
             var number = document.getElementById("number").value;
 
             // Kiểm tra xem giá trị nhập vào có phải là số hay không
-            if (isNaN(number) || number < 0) {
-                // Hiển thị thông báo lỗi nếu không phải là số dương
+            if (isNaN(number) || number < 0 || number.trim() === "") {
+                // Hiển thị thông báo lỗi nếu không phải là số dương hoặc rỗng
                 Swal.fire({
                     title: 'Lỗi',
-                    text: 'Tuổi clgt ???',
+                    text: 'Tuổi phải là số dương và không được để trống',
                     icon: 'error',
                     confirmButtonText: 'Nhập lại'
                 });
